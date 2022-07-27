@@ -1,3 +1,3 @@
 # VoidWorldGenerator
-**虚空生成器**
+一个简单的**虚空世界生成器**  
 适用于bds
