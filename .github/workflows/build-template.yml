@@ -4,7 +4,7 @@ on: [ workflow_dispatch ]
 
 env:
   PLUGIN_NAME: VoidWorldGnerator
-  SOLUTION_FILE_PATH: ./Template.sln
+  SOLUTION_FILE_PATH: ./VoidWorldGnerator.sln
   VERSION_FILE_PATH: resources/Version.h
   BUILD_CONFIGURATION: Release
   Platform: X64
