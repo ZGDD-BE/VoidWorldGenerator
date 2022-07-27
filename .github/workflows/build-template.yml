@@ -1,6 +1,6 @@
 name: Build VoidWorldGenerator Plugin
 
-on: [ workflow_dispatch ]
+on: [ push ]
 
 env:
   PLUGIN_NAME: VoidWorldGenerator
