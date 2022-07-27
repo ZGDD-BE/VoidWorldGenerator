@@ -102,13 +102,13 @@ jobs:
       - name: Upload PLUGIN
         uses: actions/upload-artifact@v2
         with:
-          name: ${{env.PLUGIN_NAME}}-Plugin-${{ steps.date.outputs.today }}
+          name: ${{env.PLUGIN_NAME}}-Plugin-${{ steps.build.outputs.today }}
           path: ${{ github.workspace }}\output\${{env.PLUGIN_NAME}}
 
       - name: Upload PDB
         uses: actions/upload-artifact@v2
         with:
-          name: ${{env.PLUGIN_NAME}}-PDB-${{ steps.date.outputs.today }}
+          name: ${{env.PLUGIN_NAME}}-PDB-${{ steps.build.outputs.today }}
           path: ${{ github.workspace }}\output\PDB
           
 
@@ -118,8 +118,8 @@ jobs:
         with:
           # body_path: ${{ github.workspace }}\CHANGELOG.txt
           files: |
-            ${{ github.workspace }}\${{env.PLUGIN_NAME}}-Plugin-${{ steps.date.outputs.today }}.zip
-            ${{ github.workspace }}\${{env.PLUGIN_NAME}}-PDB-${{ steps.date.outputs.today }}.zip
+            ${{ github.workspace }}\${{env.PLUGIN_NAME}}-Plugin-${{ steps.build.outputs.today }}.zip
+            ${{ github.workspace }}\${{env.PLUGIN_NAME}}-PDB-${{ steps.build.outputs.today }}.zip
         env:
           GITHUB_REPOSITORY: ${{env.GITHUB_ACTION_REPOSITORY}}
           
