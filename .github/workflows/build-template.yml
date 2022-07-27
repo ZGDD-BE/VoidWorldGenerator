@@ -102,13 +102,13 @@ jobs:
       - name: Upload PLUGIN
         uses: actions/upload-artifact@v2
         with:
-          name: ${{env.PLUGIN_NAME}}-actions-${{ github.run_number }}
+          name: ${{env.PLUGIN_NAME}}-Plugin-${{ steps.date.outputs.today }}
           path: ${{ github.workspace }}\output\${{env.PLUGIN_NAME}}
 
       - name: Upload PDB
         uses: actions/upload-artifact@v2
         with:
-          name: PDB-actions-${{ github.run_number }}
+          name: ${{env.PLUGIN_NAME}}-PDB-${{ steps.date.outputs.today }}
           path: ${{ github.workspace }}\output\PDB
           
 
