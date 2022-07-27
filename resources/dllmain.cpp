@@ -35,12 +35,12 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     return TRUE;
 }
 
-void PluginInit();
+void entry();
 
 extern "C" {
     // Do something after all the plugins loaded
     _declspec(dllexport) void onPostInit() {
         std::ios::sync_with_stdio(false);
-        PluginInit();
+        entry();
     }
 }
