@@ -1,29 +1,44 @@
-# LiteLoaderBDS C++ Plugin Template
+# VoidWorldGenerator
 
-The template repository for LiteLoaderBDS C++ plugin development.
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Minecraft](https://img.shields.io/badge/Minecraft-Bedrock_Edition-green)
+![Platform](https://img.shields.io/badge/platform-Windows-orange)
+
+VoidWorldGenerator is a plugin for Minecraft Bedrock Dedicated Servers on Windows, designed to generate void worlds and support skyblock generation.
+
+## Features
+
+- Generates an empty world devoid of any blocks
+- Retains biome information for each void world
+- Compatibility with custom skyblock generator for skyblock survival challenges
+
+## Installation
+
+1. Download the latest release from the [Releases](https://github.com/dofes/VoidWorldGenerator/releases) page.
+2. Place the downloaded file in the `plugins` folder of your Minecraft Bedrock Dedicated Server.
+3. Restart your server to enable the VoidWorldGenerator plugin.
 
 ## Usage
 
-* Write and build your plugin
+To create a void world with skyblock functionality:
 
-  Please refer to [LiteLoaderBDS C++ Plugin Development Documentation](https://cpp.docs.litebds.com/en/) or [LiteLoaderBDS C++ 插件开发文档](https://cpp.docs.litebds.com/zh-Hans/).
+1. Generate a void world using the VoidWorldGenerator plugin.
+2. Pair the void world with your custom skyblock generator.
+3. Invite players to join the skyblock survival challenge.
 
-* Edit README.md and LICENSE
+## Contributing
 
-  You ought not to keep the original README.md, for it contains instructions on how to build your own plugin, which might not fit your plugin repository. The README.md of your repository should contain instructions on how to build, install and use your plugin.
+If you would like to contribute to the development of VoidWorldGenerator, please follow these steps:
 
-  You don't necessarily want your repository to be open sourced under the Unlicense, so please choose your own license in place of the `LICENSE` file.
-
-## For Beta Developers
-
-If you would like to experience the latest features for plugins in beta versions of LiteLoaderBDS, you can switch the branch of the SDK to beta. Run the commands below under the plugin repository:
-
-```sh
-git submodule set-branch --branch beta SDK
-git submodule update --init --remote
-```
+1. Fork the repository
+2. Create a new branch with a descriptive name
+3. Make your changes in the new branch
+4. Submit a pull request with a detailed description of your changes
 
 ## License
 
-This repository is open source under the Unlicense.
-Please refer to [the license file](LICENSE) for further information.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you encounter any issues or have questions, please submit an issue on the [Issues](https://github.com/dofes/VoidWorldGenerator/issues) page.
