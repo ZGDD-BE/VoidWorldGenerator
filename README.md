@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Minecraft](https://img.shields.io/badge/Minecraft-Bedrock_Edition-green)
-![Platform](https://img.shields.io/badge/Platform-Minecraft%20Dedicated%20Server-orange)
+![Platform](https://img.shields.io/badge/platform-Windows-orange)
 
 VoidWorldGenerator is a plugin for Minecraft Bedrock Dedicated Servers on Windows, designed to generate void worlds and support skyblock generation.
 
