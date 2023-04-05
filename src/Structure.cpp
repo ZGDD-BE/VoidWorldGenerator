@@ -1,9 +1,12 @@
-#include "pch.h"
 
-#include <MC/ServerCommandOrigin.hpp>
-#include <MC/TeleportComponent.hpp>
-#include <MC/BlockVolume.hpp>
-#include <MC/OverworldGenerator.hpp>
+#include <llapi/mc/ServerCommandOrigin.hpp>
+#include <llapi/mc/TeleportComponent.hpp>
+#include <llapi/mc/BlockVolume.hpp>
+#include <llapi/mc/OverworldGenerator.hpp>
+#include <llapi/HookAPI.h>
+
+
+
 THook(void, "?_prepareHeights@OverworldGeneratorMultinoise@@EEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVWorldGenCache@@PEAVAquifer@@$$QEAV?$function@$$A6AXAEBVBlockPos@@AEBVBlock@@H@Z@std@@_NPEAV?$vector@FV?$allocator@F@std@@@7@H@Z"
 	, ServerCommandOrigin* a1,
 	BlockVolume* a2,
@@ -44,11 +47,11 @@ THook(void, "?placeBedrockCeiling@Utils@VanillaSurfaceBuilders@@YAXAEAVRandom@@A
 
 THook(void, "?buildSurfaceAt@OceanFrozenSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z",
 	void* _this,
-	ISurfaceBuilder::BuildParameters* a2) {
+	void* a2) {
 	return;
 }
 
-#include <MC/IcebergFeature.hpp>
+#include <llapi/mc/IcebergFeature.hpp>
 THook(void, "?generateIcebergBlock@IcebergFeature@@AEBAXAEAVBlockSource@@AEAVRandom@@AEBVBlockPos@@HHHHHH_N3MHAEBVBlock@@@Z",
 	IcebergFeature* _this,
 	struct BlockSource* a2,
@@ -69,8 +72,8 @@ THook(void, "?generateIcebergBlock@IcebergFeature@@AEBAXAEAVBlockSource@@AEAVRan
 	return;
 }
 
-#include <MC/OceanRuinStart.hpp>
-#include <MC/Dimension.hpp>
+#include <llapi/mc/OceanRuinStart.hpp>
+#include <llapi/mc/Dimension.hpp>
 THook(void, "?createRuin@OceanRuinStart@@QEAAXAEAVDimension@@AEAVOverworldGenerator@@AEAVRandom@@HH@Z",
 	OceanRuinStart* _this,
 	Dimension* a2,
@@ -81,7 +84,7 @@ THook(void, "?createRuin@OceanRuinStart@@QEAAXAEAVDimension@@AEAVOverworldGenera
 	return;
 }
 
-//#include <MC/ShipwreckStart.hpp>
+//#include <llapi/mc/ShipwreckStart.hpp>
 //THook(void, "?createStructureStart@ShipwreckFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z",
 //	__int64 a1,
 //	ShipwreckStart** a2,
@@ -92,7 +95,7 @@ THook(void, "?createRuin@OceanRuinStart@@QEAAXAEAVDimension@@AEAVOverworldGenera
 //	return;
 //}
 
-#include <MC/FossilFeature.hpp>
+#include <llapi/mc/FossilFeature.hpp>
 THook(char, "?place@FossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z",
 	FossilFeature* _this,
 	struct BlockSource* a2,
@@ -101,7 +104,7 @@ THook(char, "?place@FossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRand
 	return true;
 }
 
-#include <MC/NetherFossilFeature.hpp>
+#include <llapi/mc/NetherFossilFeature.hpp>
 THook(long long, "?place@NetherFossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z",
 	NetherFossilFeature* _this,
 	struct BlockSource* a2,
@@ -110,7 +113,7 @@ THook(long long, "?place@NetherFossilFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPo
 	return true;
 }
 
-#include <MC/ShipwreckFeature.hpp>
+#include <llapi/mc/ShipwreckFeature.hpp>
 THook(bool, "?isFeatureChunk@ShipwreckFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@@Z",
 	ShipwreckFeature* _this,
 	const struct BiomeSource* a2,
@@ -123,11 +126,11 @@ THook(bool, "?isFeatureChunk@ShipwreckFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom
 
 THook(void, "?buildSurfaceAt@MesaSurfaceBuilder@VanillaSurfaceBuilders@@UEBAXAEBUBuildParameters@ISurfaceBuilder@@@Z",
 	void* _this,
-	const struct ISurfaceBuilder::BuildParameters* a2) {
+	const void* a2) {
 	return;
 }
 
-#include <MC/VillageFeature.hpp>
+#include <llapi/mc/VillageFeature.hpp>
 THook(bool, "?isFeatureChunk@VillageFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@@Z",
 	VillageFeature* _this,
 	const struct BiomeSource* a2,
@@ -138,7 +141,7 @@ THook(bool, "?isFeatureChunk@VillageFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@
 	return false;
 }
 
-#include <MC/OceanMonumentFeature.hpp>
+#include <llapi/mc/OceanMonumentFeature.hpp>
 THook(bool, "?isFeatureChunk@OceanMonumentFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@@Z",
 	OceanMonumentFeature* _this,
 	const struct BiomeSource* a2,
@@ -149,7 +152,7 @@ THook(bool, "?isFeatureChunk@OceanMonumentFeature@@UEAA_NAEBVBiomeSource@@AEAVRa
 	return false;
 }
 
-#include <MC/JunglePyramidPiece.hpp>
+#include <llapi/mc/JunglePyramidPiece.hpp>
 THook(bool, "?postProcess@JunglePyramidPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z",
 	JunglePyramidPiece* _this,
 	struct BlockSource* a2,
@@ -158,7 +161,7 @@ THook(bool, "?postProcess@JunglePyramidPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@
 	return false;
 }
 
-#include <MC/DesertPyramidPiece.hpp>
+#include <llapi/mc/DesertPyramidPiece.hpp>
 THook(bool, "?postProcess@DesertPyramidPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z",
 	DesertPyramidPiece* _this,
 	struct BlockSource* a2,
@@ -167,7 +170,7 @@ THook(bool, "?postProcess@DesertPyramidPiece@@UEAA_NAEAVBlockSource@@AEAVRandom@
 	return false;
 }
 
-#include <MC/PillagerOutpostFeature.hpp>
+#include <llapi/mc/PillagerOutpostFeature.hpp>
 THook(bool, "?isFeatureChunk@PillagerOutpostFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@@Z",
 	PillagerOutpostFeature* _this,
 	const struct BiomeSource* a2,
@@ -178,7 +181,7 @@ THook(bool, "?isFeatureChunk@PillagerOutpostFeature@@UEAA_NAEBVBiomeSource@@AEAV
 	return false;
 }
 
-#include <MC/StrongholdFeature.hpp>
+#include <llapi/mc/StrongholdFeature.hpp>
 THook(bool, "?isFeatureChunk@StrongholdFeature@@UEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@@Z",
 	StrongholdFeature* _this,
 	const struct BiomeSource* a2,
@@ -189,7 +192,7 @@ THook(bool, "?isFeatureChunk@StrongholdFeature@@UEAA_NAEBVBiomeSource@@AEAVRando
 	return false;
 }
 
-#include <MC/WoodlandMansionFeature.hpp>
+#include <llapi/mc/WoodlandMansionFeature.hpp>
 THook(bool, "?isFeatureChunk@WoodlandMansionFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@@Z",
 	WoodlandMansionFeature* _this,
 	const struct BiomeSource* a2,
