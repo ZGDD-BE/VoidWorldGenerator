@@ -83,10 +83,9 @@ THook(void, "?generateIcebergBlock@IcebergFeature@@AEBAXAEAVBlockSource@@AEAVRan
 THook(void, "?createRuin@OceanRuinStart@@QEAAXAEAVDimension@@AEAVRandom@@HH@Z",
 	OceanRuinStart* _this,
 	Dimension* a2,
-	struct OverworldGenerator* a3,
-	struct Random* a4,
-	int a5,
-	int a6) {
+	struct Random* a3,
+	int a4,
+	int a5) {
 	return;
 }
 
@@ -126,7 +125,8 @@ THook(bool, "?isFeatureChunk@ShipwreckFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom
 	struct Random* a3,
 	const struct ChunkPos* a4,
 	unsigned int a5,
-	const struct IPreliminarySurfaceProvider* a6) {
+	const struct IPreliminarySurfaceProvider* a6,
+	const struct Dimension* a7) {
 	return false;
 }
 
@@ -194,7 +194,8 @@ THook(bool, "?isFeatureChunk@StrongholdFeature@@UEAA_NAEBVBiomeSource@@AEAVRando
 	struct Random* a3,
 	const struct ChunkPos* a4,
 	unsigned int a5,
-	const struct IPreliminarySurfaceProvider* a6) {
+	const struct IPreliminarySurfaceProvider* a6,
+	const struct Dimension* a7) {
 	return false;
 }
 
